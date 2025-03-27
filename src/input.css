@@ -9,6 +9,8 @@
   --color-verde-900: #0f1c15;
   --color-verde-950: #030504;
 
+  --animate-fadeIn: fadeIn 0.4s ease-in-out forwards;
+
   @keyframes slideIn {
     0% {
       opacity: 0;
@@ -26,6 +28,22 @@
     100% {
       opacity: 1;
     }
+  }
+}
+
+@layer components {
+  .neon {
+    @apply rounded-full border border-verde-200 bg-gradient-to-b from-verde-200 to-verde-400;
+    box-shadow: 0 1px 4px 1px theme(--color-verde-200/25%),
+      inset 0px -1px 2px theme(--color-verde-200);
+  }
+  .input {
+    @apply p-2 rounded-md border-2 border-verde-800 text-white bg-verde-800 focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900;
+  }
+  .btn {
+    @apply px-5 py-2 rounded-full border border-verde-200 bg-gradient-to-b from-verde-200 to-verde-400 text-verde-900 transition contrast-200;
+    box-shadow: 0 1px 4px 1px theme(--color-verde-200/25%),
+      inset 0px -1px 2px theme(--color-verde-200);
   }
 }
 

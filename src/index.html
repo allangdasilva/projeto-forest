@@ -10,13 +10,11 @@
   <body class="font-sans bg-verde-800">
     <div class="container mt-4 flex justify-center md:justify-start">
       <div class="inline-flex items-center rounded-md bg-verde-900">
-        <span
-          class="relative -left-1 size-2 block rounded-full bg-verde-300"
-        ></span>
+        <span class="relative -left-1 size-2 block neon"></span>
         <div class="flex divide-x-2 divide-verde-800 text-verde-300">
           <div class="px-4 py-2 capitalize" id="day">Segunda</div>
-          <div class="px-4 py-2" id="temperature">5°</div>
-          <div class="px-4 py-2" id="weather">🌤</div>
+          <div class="px-4 py-2" id="temperature"></div>
+          <div class="px-4 py-2" id="weather"></div>
         </div>
       </div>
     </div>
@@ -69,10 +67,9 @@
           </li>
         </ul>
       </nav>
-
       <button
         id="mobile-button"
-        class="flex items-center gap-2 py-2 px-4 rounded-full cursor-pointer text-verde-900 bg-verde-400 md:hidden"
+        class="btn flex items-center gap-2 py-2 rounded-full cursor-pointer text-verde-900 md:hidden"
       >
         Menu
         <span
@@ -89,21 +86,24 @@
       <div
         class="relative pt-12 px-4 pb-8 rounded-2xl overflow-hidden text-white bg-gradient-to-t from-verde-950/80 md:pt-64 md:px-8"
       >
-        <img
-          class="absolute size-full object-cover -z-10 inset-0"
-          src="./img/floresta.jpg"
-          alt=""
-        />
-
+        <video
+          class="absolute size-full object-cover -z-10 inset-0 animate-fadeIn"
+          muted
+          autoplay
+          playsinline
+          loop
+          width="1280"
+          height="720"
+          id="video"
+          src="./img/video_chuva.mp4"
+        ></video>
         <div
           class="flex flex-col items-start gap-2 mb-8 md:inline-flex md:flex-row md:items-center md:gap-8 md:py-1 md:pl-4 md:pr-1 md:rounded-full md:bg-verde-950"
         >
           vagas para dezembro abertas
-          <a
-            href="./"
-            class="inline-block py-2 px-4 rounded-full text-verde-900 bg-verde-400"
-            >Reserve Hoje</a
-          >
+          <a href="#contato" class="btn inline-flex items-center gap-2"
+            >Reserve Hoje <img src="./img/seta.svg" alt=""
+          /></a>
         </div>
         <h1
           class="max-w-sm mb-8 font-serif text-4xl balance md:text-5xl md:mb-20"
@@ -139,7 +139,7 @@
 
     <!-- Acomodações -->
     <section
-      class="container grid gap-8 mb-12 pt-12 md:pt-16 md:mb-16 lg:grid-cols-[2fr_3fr]"
+      class="bg-radial-[50%_100%_at_50%_0%] from-verde-700 from-0% to-verde-800 to-100% container grid gap-8 mb-12 pt-12 md:pt-16 md:mb-16 lg:grid-cols-[2fr_3fr]"
       id="acomodacoes"
     >
       <div
@@ -152,24 +152,24 @@
           class="grid gap-4 text-gray-200 *:flex *:items-center *:gap-4 md:text-xl"
         >
           <li>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>Experimente
-            a natureza de perto
+            <span class="inline-block w-6 h-0.5 neon"></span>Experimente a
+            natureza de perto
           </li>
           <li>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>Conecte-se
-            com a natureza
+            <span class="inline-block w-6 h-0.5 neon"></span>Conecte-se com a
+            natureza
           </li>
           <li>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span
-            >Desconecte-se do digital
+            <span class="inline-block w-6 h-0.5 neon"></span>Desconecte-se do
+            digital
           </li>
           <li>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>Observe a
-            vida selvagem
+            <span class="inline-block w-6 h-0.5 neon"></span>Observe a vida
+            selvagem
           </li>
           <li>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>Escolha a
-            sua cabine preferida
+            <span class="inline-block w-6 h-0.5 neon"></span>Escolha a sua
+            cabine preferida
           </li>
         </ul>
       </div>
@@ -244,7 +244,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end inline-block py-2 px-4 rounded-full text-verde-900 bg-verde-400"
+              class="justify-self-start self-end inline-block btn"
               >Reservar 23/03</a
             >
           </div>
@@ -263,7 +263,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end inline-block py-2 px-4 rounded-full text-verde-900 bg-verde-400"
+              class="justify-self-start self-end inline-block btn"
               >Reservar 15/04</a
             >
           </div>
@@ -284,7 +284,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end inline-block py-2 px-4 rounded-full text-verde-900 bg-verde-400"
+              class="justify-self-start self-end inline-block btn"
               >Reservar 18/08</a
             >
           </div>
@@ -308,7 +308,7 @@
         </h2>
 
         <h3
-          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-verde-400 hover:before:w-10 before:transition-all"
+          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-gradient-to-b before:from-verde-200 before:to-verde-400 hover:before:w-10 before:transition-all before:shadow-[0_1px_4px_1px_#acef7546,inset_0px_-1px_2px_#acef75]"
         >
           Observação Noturna
         </h3>
@@ -317,7 +317,7 @@
         </p>
 
         <h3
-          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-verde-400 hover:before:w-10 before:transition-all"
+          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-gradient-to-b before:from-verde-200 before:to-verde-400 hover:before:w-10 before:transition-all before:shadow-[0_1px_4px_1px_#acef7546,inset_0px_-1px_2px_#acef75]"
         >
           Vida Selvagem
         </h3>
@@ -326,7 +326,7 @@
         </p>
 
         <h3
-          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-verde-400 hover:before:w-10 before:transition-all"
+          class="flex items-center gap-4 text-xl text-white before:w-6 before:h-0.5 before:bg-gradient-to-b before:from-verde-200 before:to-verde-400 hover:before:w-10 before:transition-all before:shadow-[0_1px_4px_1px_#acef7546,inset_0px_-1px_2px_#acef75]"
         >
           Canoagem
         </h3>
@@ -395,9 +395,7 @@
         <div
           class="flex-1 grid gap-4 p-4 rounded-xl bg-verde-900 transition md:hover:-translate-y-2 md:p-8"
         >
-          <div
-            class="flex items-center justify-center size-10 rounded-full bg-verde-400"
-          >
+          <div class="flex items-center justify-center size-10 neon">
             <img src="./img/manha.svg" alt="" />
           </div>
           <h3 class="font-serif text-2xl text-white">Amanhecer</h3>
@@ -411,9 +409,7 @@
         <div
           class="flex-1 grid gap-4 p-4 rounded-xl bg-verde-900 transition md:translate-y-12 md:hover:translate-y-10 md:p-8"
         >
-          <div
-            class="flex items-center justify-center size-10 rounded-full bg-verde-400"
-          >
+          <div class="flex items-center justify-center size-10 neon">
             <img src="./img/dia.svg" alt="" />
           </div>
           <h3 class="font-serif text-2xl text-white">Meio-dia</h3>
@@ -427,9 +423,7 @@
         <div
           class="flex-1 grid gap-4 p-4 rounded-xl bg-verde-900 transition md:hover:-translate-y-2 md:p-8"
         >
-          <div
-            class="flex items-center justify-center size-10 rounded-full bg-verde-400"
-          >
+          <div class="flex items-center justify-center size-10 neon">
             <img src="./img/noite.svg" alt="" />
           </div>
           <h3 class="font-serif text-2xl text-white">Anoitecer</h3>
@@ -454,19 +448,19 @@
         </p>
         <div class="grid gap-4">
           <div>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>
+            <span class="inline-block w-6 h-0.5 neon"></span>
             <h3 class="mb-2 font-serif text-2xl text-verde-300">Base</h3>
             <p class="text-gray-300">
               Rua da Mata, 123 - Floresta Nacional - SP
             </p>
           </div>
           <div>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>
+            <span class="inline-block w-6 h-0.5 neon"></span>
             <h3 class="mb-2 font-serif text-2xl text-verde-300">Email</h3>
             <p class="text-gray-300">contato@forest.com</p>
           </div>
           <div>
-            <span class="inline-block w-6 h-0.5 bg-verde-400"></span>
+            <span class="inline-block w-6 h-0.5 neon"></span>
             <h3 class="mb-2 font-serif text-2xl text-verde-300">Telefone</h3>
             <p class="text-gray-300">11 99999-9999</p>
           </div>
@@ -475,29 +469,19 @@
       <form class="grid gap-4 p-4 rounded-xl shadow-2xl bg-verde-900 md:p-8">
         <div class="grid gap-1">
           <label class="text-white" for="name">Nome</label>
-          <input
-            class="p-2 rounded-md border-2 border-verde-800 text-white bg-verde-800 focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
-            type="text"
-            name="name"
-            id="name"
-          />
+          <input class="input" type="text" name="name" id="name" />
         </div>
 
         <div class="grid gap-4 lg:grid-cols-2">
           <div class="flex flex-col gap-1">
             <label class="text-white" for="email">Email</label>
-            <input
-              class="p-2 rounded-md border-2 border-verde-800 text-white bg-verde-800 focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
-              name="email"
-              type="email"
-              id="email"
-            />
+            <input class="input" name="email" type="email" id="email" />
           </div>
 
           <div class="flex flex-col gap-1">
             <label class="text-white" for="tel">Telefone</label>
             <input
-              class="p-2 rounded-md border-2 border-verde-800 text-white bg-verde-800 focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              class="input"
               placeholder="(11) 99999-9999"
               name="tel"
               type="text"
@@ -508,16 +492,14 @@
         <div class="flex flex-col gap-1">
           <label class="text-white" for="message">Mensagem</label>
           <textarea
-            class="p-2 rounded-md border-2 resize-none border-verde-800 text-white bg-verde-800 focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+            class="input resize-none"
             rows="5"
             name="message"
             type="text"
             id="message"
           ></textarea>
         </div>
-        <button
-          class="justify-self-start inline-block py-2 px-4 rounded-full text-verde-900 bg-verde-400"
-        >
+        <button class="justify-self-start inline-block btn">
           Enviar Email
         </button>
       </form>
@@ -575,8 +557,23 @@
     </footer>
 
     <script>
+      const video = document.querySelector("#video");
+      const day = document.querySelector("#day");
+      const temperature = document.querySelector("#temperature");
+      const weather = document.querySelector("#weather");
       const mobileButton = document.querySelector("#mobile-button");
       const mobileMenu = document.querySelector("#mobile-menu");
+
+      const random = Math.floor(Math.random() * 10) + 20;
+      const date = new Date();
+
+      video.src = random < 25 ? "./img/video_chuva.mp4" : "./img/video_sol.mp4";
+
+      day.innerHTML = date.toLocaleDateString("pt-BR", {
+        weekday: "long",
+      });
+      temperature.innerHTML = `${random}°`;
+      weather.innerHTML = random < 25 ? `🌧 ${random + 5}%` : "🌤";
 
       mobileButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
