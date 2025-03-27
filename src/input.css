@@ -8,6 +8,25 @@
   --color-verde-800: #16281f;
   --color-verde-900: #0f1c15;
   --color-verde-950: #030504;
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @utility container {

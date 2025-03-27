@@ -25,16 +25,64 @@
       <a href="./">
         <img src="./img/forest.svg" alt="Forest" />
       </a>
-      <nav>
+      <nav
+        id="mobile-menu"
+        class="fixed inset-0 hidden items-center w-full z-40 md:block md:static"
+      >
+        <div
+          class="fixed inset-0 backdrop-blur-md bg-verde-950/40 md:hidden"
+        ></div>
         <ul
-          class="flex flex-wrap gap-8 text-xl text-white *:hover:underline *:hover:underline-offset-8"
+          class="absolute z-50 flex flex-col w-full p-8 text-2xl divide-y-2 divide-white/10 text-white md:*:hover:underline *:hover:underline-offset-8 md:static md:z-0 md:flex-row md:justify-end md:gap-8 md-flex-wrap md:w-[initial] md:p-0 md:text-xl md:divide-none"
         >
-          <li><a href="#acomodacoes">Acomodações</a></li>
-          <li><a href="#eventos">Eventos</a></li>
-          <li><a href="#experiencias">Experiências</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li
+            class="animate-[slideIn_0.4s_0.1s_ease-in-out_forwards] opacity-0"
+          >
+            <a
+              class="block p-4 max-md:hover:bg-white/10 md:p-0"
+              href="#acomodacoes"
+              >Acomodações</a
+            >
+          </li>
+          <li
+            class="animate-[slideIn_0.4s_0.2s_ease-in-out_forwards] opacity-0"
+          >
+            <a class="block p-4 max-md:hover:bg-white/10 md:p-0" href="#eventos"
+              >Eventos</a
+            >
+          </li>
+          <li
+            class="animate-[slideIn_0.4s_0.3s_ease-in-out_forwards] opacity-0"
+          >
+            <a
+              class="block p-4 max-md:hover:bg-white/10 md:p-0"
+              href="#experiencias"
+              >Experiências</a
+            >
+          </li>
+          <li
+            class="animate-[slideIn_0.4s_0.4s_ease-in-out_forwards] opacity-0"
+          >
+            <a class="block p-4 max-md:hover:bg-white/10 md:p-0" href="#contato"
+              >Contato</a
+            >
+          </li>
         </ul>
       </nav>
+
+      <button
+        id="mobile-button"
+        class="flex items-center gap-2 py-2 px-4 rounded-full cursor-pointer text-verde-900 bg-verde-400 md:hidden"
+      >
+        Menu
+        <span
+          class="flex flex-col justify-between w-4 h-3 *:h-0.5 *:rounded-md *:bg-verde-950"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
     </header>
 
     <main class="container">
@@ -525,5 +573,19 @@
         </ul>
       </div>
     </footer>
+
+    <script>
+      const mobileButton = document.querySelector("#mobile-button");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      mobileButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+      });
+      mobileMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+      });
+    </script>
   </body>
 </html>
